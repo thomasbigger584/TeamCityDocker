@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+    teamcity-server:
+        image: jetbrains/teamcity-server
+        container_name: teamcity-server
+        restart: always
+        volumes:
+            - '~/volumes/teamcity/datadir:/data/teamcity_server/datadir'
+            - '~/volumes/teamcity/logs:/opt/teamcity/logs'
+        ports:
+            - '8111:8111'

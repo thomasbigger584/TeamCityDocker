@@ -1,0 +1,11 @@
+version: '3.3'
+# https://hub.docker.com/r/jetbrains/teamcity-agent/
+services:
+    teamcity-agent:
+        image: jetbrains/teamcity-agent
+        container_name: teamcity-agent
+        restart: always
+        environment:
+            - 'SERVER_URL=http://192.168.0.101:8111' # needs to be the machine ip because of docker container
+        volumes:
+            - '~/volumes/teamcity-agent/conf:/data/teamcity_agent/conf'
